@@ -13,5 +13,20 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+
+    $standardTagClass = new \project\StandardTagClass();
+
+    $shortTagClass = new \project\ShortTagClass();
+
+    $ASPTagClass = new \project\ASPTagClass();
+
+
+    $standardTagClassOutput = 'StandardTagClass: ' . $standardTagClass->giveTagInfo();
+    $shortTagClassOutput = 'ShortTagClass: ' . $shortTagClass->giveTagInfo();
+    $ASPTagClassOutput = 'ASPTagClass: ' . $ASPTagClass->giveTagInfo();
+
+    echo ($standardTagClassOutput .'<br/>' .
+        $shortTagClassOutput . '<br/>'.
+        $ASPTagClassOutput);
+
 });
