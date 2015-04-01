@@ -14,6 +14,9 @@
 Route::get('/', function()
 {
 
+    ini_set('short_open_tag', '1');
+    ini_set('asp_tags', '1');
+
     $standardTagClass = new \project\StandardTagClass();
 
     $shortTagClass = new \project\ShortTagClass();
